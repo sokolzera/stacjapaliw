@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STACJA BENZYNOWA</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <div class="TLO" >
+        <div>
+            <h1 >STACJA BENZYNOWA</h1>
+        </div>
+        <div>
+            <h3 >Wybierz rodzaj paliwa</h3>
+        </div>
+        <div >
+            <input type="radio" id="BENZYNA" name="tank" value="paliwo">
+            <label for="BENZYNA">BENZYNA</label>
+        </div>
+        <div >
+            <input type="radio" id="DIESEL" name="tank" value="paliwo">
+            <label for="DIESEL"> DIESEL </label>
+        </div>
+        <div >
+            <p>Ile litrow zatankowales?:</p>
+            <input type="text" id="litry">
+        </div>
+        <div >
+            <button onclick="oblicz()">oblicz</button>
+            <p>Cena wynosi:</p>
+            <p id="wynik"></p>
+        </div>
+    </div>
+    <script>
+
+
+
+        function oblicz() {
+
+            var Paliwo = document.getElementById("litry").value;
+
+            let ropa = document.getElementById("DIESEL").checked;
+            let benzyna = document.getElementById("BENZYNA").checked;
+            if (ropa == true) {
+                let cena = Paliwo * 7.5;
+                document.getElementById("wynik").innerHTML = cena;
+            }
+            else if (benzyna == true) {
+                let cena = Paliwo * 6.7;
+                document.getElementById("wynik").innerHTML = cena;
+            }
+        }
+    </script>
+</body>
+<style> 
+.TLO{
+    background-color: rgb(185, 183, 69);
+    padding: 400px;
+    text-align: center;
+}
+</style>
+</html>
